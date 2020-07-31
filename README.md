@@ -9,10 +9,14 @@
 
 ## Installation guide
 ``` bash
+# download the repository
 $ git clone https://github.com/fukou/dashboard-user.git
-$ cd dashboard-user
+
+$ cd codingcabin
+
 # install dependencies
 $ npm install
+
 # run the project
 $ grunt
 ```
