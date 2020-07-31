@@ -2,12 +2,17 @@
 // @import "variables";
 @import "mixins";
 
+body {
+  min-height: 100vh;
+}
+
 :root {
   --heading-font: "DM Serif Display", serif;
   --body-font: "DM Sans", sans-serif;
 
   --primary-color: #ff0969;
   --secondary-color: #d3e2f2;
+  --tertiary-color: #0b379b;
 
   --header-navigation: #fff;
   --header-navigation-link: #111;
@@ -60,6 +65,16 @@
     max-width: 65rem;
     margin: auto;
 
+    &--logo {
+      img {
+        height: 60px;
+
+        @media screen and (max-width: 60rem) {
+          height: 40px;
+        }
+      }
+    }
+
     &--links {
       display: flex;
       align-items: center;
@@ -107,7 +122,7 @@
   margin-top: 5rem;
 
   &__header {
-    padding: 6.5rem 3.5rem;
+    padding: 8.5rem 3.5rem;
 
     @media screen and (max-width: 60rem) {
       padding: 3.5rem 1.85rem;
@@ -140,16 +155,23 @@
           margin-bottom: 1rem;
         }
 
+        p {
+          color: var(--body-color);
+        }
+
         .btn-join {
           background-color: var(--primary-color);
           margin-top: 1.5rem;
           color: white;
           display: inline-block;
           text-decoration: none;
-          padding: 0.65rem 1rem;
+          padding: 0.85rem 1.25rem;
           -webkit-border-radius: 10px;
           -moz-border-radius: 10px;
           border-radius: 10px;
+
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+            0 6px 6px rgba(0, 0, 0, 0.2);
         }
       }
 
@@ -181,6 +203,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-bottom: 1.5rem;
 
         h1 {
           font-family: var(--heading-font);
@@ -188,18 +211,54 @@
         }
 
         .btn-show {
+          display: inline-flex;
           background-color: transparent;
           border: 1px solid rgba(0, 0, 0, 0.2);
-          margin-top: 1.5rem;
           color: var(--header-navigation-link);
-          display: inline-block;
           text-decoration: none;
           padding: 0.65rem 1rem;
           -webkit-border-radius: 10px;
           -moz-border-radius: 10px;
           border-radius: 10px;
+
+          svg {
+            vertical-align: middle;
+          }
+
+          .sr-only {
+            margin-right: 0.5rem;
+            @media (max-width: 60rem) {
+              clip: rect(1px, 1px, 1px, 1px);
+              height: 1px;
+              overflow: hidden;
+              position: absolute;
+              left: 0;
+              top: 0;
+              white-space: nowrap;
+              width: 1px;
+              margin: 0;
+            }
+          }
         }
       }
+    }
+  }
+}
+
+.footer {
+  padding: 2.5rem 1.5rem;
+  font-family: var(--body-font);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+
+    max-width: 60rem;
+    margin: auto;
+
+    @media screen and (max-width: 60rem) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

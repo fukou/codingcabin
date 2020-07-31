@@ -18,17 +18,34 @@
 
     <nav class="nav">
       <div class="nav__inner">
-        <div class="nav__inner--logo">CodingCabin</div>
+        <div class="nav__inner--logo">
+          <img
+            role="presentation"
+            src="https://64.media.tumblr.com/avatar_5766c7a243de_128.pnj"
+            alt=""
+          />
+        </div>
         <ul class="nav__inner--links">
           <li><a href="/">Home</a></li>
-          <li><a href="/">Members</a></li>
-          <li><a href="/">Contact</a></li>
-          <li><a href="/">Coding Awards</a></li>
-          <li class="btn-follow"><a href="">Follow Us</a></li>
+          <li><a href="/members">Members</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/awards">Coding Awards</a></li>
+          <li class="btn-follow">
+            <a
+              role="button"
+              tabindex="0"
+              href="https://tumblr.com/follow/{name}"
+              >Follow Us</a
+            >
+          </li>
         </ul>
 
-        <button class="nav__inner--mobile">
+        <button
+          class="nav__inner--mobile"
+          aria-label="Button for mobile navigation"
+        >
           <svg
+            role="presentation"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -74,13 +91,67 @@
         <div class="wrapper__featured--inner">
           <div class="wrapper__featured--inner__head">
             <h1>Featured themes</h1>
-            <a class="btn-show" href="/" role="button" tabindex="0"
-              >Show all themes</a
-            >
+            <a class="btn-show" href="/tagged/themes" role="button" tabindex="0"
+              ><div class="sr-only">
+                Show all themes
+              </div>
+              <svg
+                role="presentation"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 17l9.2-9.2M17 17V7H7" /></svg
+            ></a>
+          </div>
+          <div class="wrapper__featured--inner__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            corrupti sit ex suscipit hic. Assumenda asperiores corporis, ad
+            neque in voluptates incidunt rerum distinctio, voluptas repellat,
+            nobis maiores laudantium magnam accusantium ut tenetur. Consectetur
+            molestiae dicta optio quibusdam suscipit dolorum, velit quis ipsa
+            eveniet, possimus beatae saepe minus. Aperiam ab corporis ex
+            delectus? Perspiciatis asperiores laudantium harum excepturi! A
+            culpa sequi voluptate, saepe animi cupiditate? A ipsum placeat
+            dignissimos iste et harum enim voluptatem alias cupiditate
+            laboriosam debitis fugit similique dolorem, odio tempore facilis
+            saepe doloremque voluptatibus minima? Iure rerum possimus recusandae
+            iste repudiandae distinctio fuga atque totam, vero omnis!
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer__inner">
+        <div class="footer__inner--grid">
+          <h2>Quick Links</h2>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, nemo.
+          Sunt quas, nobis illo corrupti repellat soluta porro quos est amet, id
+          necessitatibus sequi explicabo! Eum molestiae provident enim ratione?
+        </div>
+        <div class="footer__inner--grid">
+          <h2>Affiliates</h2>
+          Ipsam id repellendus voluptatum tempora aspernatur praesentium,
+          placeat esse sit consequuntur nesciunt cupiditate dignissimos
+          accusantium aperiam beatae facilis. Illo ipsam itaque quis esse
+          repudiandae earum ea corporis nesciunt aliquam vitae.
+        </div>
+        <div class="footer__inner--grid">
+          <h2>About this blog</h2>
+          Corrupti tempore, at quasi mollitia ratione accusantium voluptates ut
+          tempora sed fugiat beatae nisi voluptas eveniet atque adipisci,
+          praesentium id similique sunt delectus officia incidunt optio ipsa
+          impedit. Obcaecati, repellendus?
+        </div>
+      </div>
+    </footer>
 
     <!-- enabling live reload in HTML -->
     <script src="//localhost:35729/livereload.js"></script>
