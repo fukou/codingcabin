@@ -1,3 +1,211 @@
 @import "reset";
-@import "variables";
+// @import "variables";
 @import "mixins";
+
+:root {
+  --heading-font: "DM Serif Display", serif;
+  --body-font: "DM Sans", sans-serif;
+
+  --primary-color: #ff0969;
+  --secondary-color: #d3e2f2;
+
+  --header-navigation: #fff;
+  --header-navigation-link: #111;
+
+  --heading-color: #111;
+  --body-color: #666;
+}
+
+// skip link
+.skip-link {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  width: 1px;
+  z-index: 999;
+  font-family: var(--body-font);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+
+  &:focus {
+    clip: auto;
+    height: auto;
+    overflow: auto;
+    position: absolute;
+    width: auto;
+  }
+}
+
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  font-family: var(--body-font);
+  background-color: var(--header-navigation);
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.2);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+
+    max-width: 65rem;
+    margin: auto;
+
+    &--links {
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 60rem) {
+        display: none;
+      }
+
+      li {
+        &.btn-follow {
+          a {
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+          }
+        }
+
+        & + li {
+          margin-left: 1.25rem;
+        }
+
+        a {
+          display: block;
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+          color: var(--header-navigation-link);
+        }
+      }
+    }
+
+    &--mobile {
+      @media screen and (min-width: 60rem) {
+        display: none;
+      }
+
+      svg {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.wrapper {
+  margin-top: 5rem;
+
+  &__header {
+    padding: 6.5rem 3.5rem;
+
+    @media screen and (max-width: 60rem) {
+      padding: 3.5rem 1.85rem;
+    }
+
+    &--inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      max-width: 60rem;
+      margin: 0 auto;
+
+      @media screen and (max-width: 60rem) {
+        flex-direction: column-reverse;
+      }
+
+      &__desc {
+        font-family: var(--body-font);
+
+        @media screen and (min-width: 60rem) {
+          margin-right: 5rem;
+        }
+
+        h1 {
+          font-size: 1.65em;
+          font-weight: normal;
+          font-family: var(--heading-font);
+
+          margin-bottom: 1rem;
+        }
+
+        .btn-join {
+          background-color: var(--primary-color);
+          margin-top: 1.5rem;
+          color: white;
+          display: inline-block;
+          text-decoration: none;
+          padding: 0.65rem 1rem;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 10px;
+        }
+      }
+
+      &__img {
+        @media screen and (max-width: 60rem) {
+          margin-bottom: 2.5rem;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__featured {
+    background-color: var(--secondary-color);
+    padding: 6.5rem 3.5rem;
+    font-family: var(--body-font);
+
+    @media screen and (max-width: 60rem) {
+      padding: 3.5rem 1.85rem;
+    }
+
+    &--inner {
+      max-width: 60rem;
+      margin: 0 auto;
+
+      &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-family: var(--heading-font);
+          font-weight: normal;
+        }
+
+        .btn-show {
+          background-color: transparent;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          margin-top: 1.5rem;
+          color: var(--header-navigation-link);
+          display: inline-block;
+          text-decoration: none;
+          padding: 0.65rem 1rem;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+html {
+  @media screen and (max-width: 60rem) {
+    font-size: 14px;
+  }
+}

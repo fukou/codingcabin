@@ -5,18 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | Coding Cabin</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- skip link 
+    https://a11y-101.com/development/skip-link
+    -->
+    <a href="#main" class="skip-link">Jump directly to main content</a>
+
     <nav class="nav">
       <div class="nav__inner">
         <div class="nav__inner--logo">CodingCabin</div>
         <ul class="nav__inner--links">
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Members</a></li>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/">Coding Awards</a></li>
+          <li class="btn-follow"><a href="">Follow Us</a></li>
         </ul>
+
+        <button class="nav__inner--mobile">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </nav>
+
+    <main class="wrapper">
+      <section class="wrapper__header">
+        <div class="wrapper__header--inner">
+          <div class="wrapper__header--inner__desc">
+            <h1>What is Coding Cabin?</h1>
+            <p>
+              Coding Cabin is a Discord server that aims to bring together the
+              theme-making community of Tumblr with the goal of increasing
+              cooperation among and visibility for everyone who provide the site
+              with beautiful themes and other content!
+              <br />
+              <a href="#" class="btn-join" role="button" tabindex="0"
+                >Join Coding Cabin</a
+              >
+            </p>
+          </div>
+
+          <div class="wrapper__header--inner__img">
+            <img role="presentation" src="/img/croods.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section id="main" class="wrapper__featured">
+        <div class="wrapper__featured--inner">
+          <div class="wrapper__featured--inner__head">
+            <h1>Featured themes</h1>
+            <a class="btn-show" href="/" role="button" tabindex="0"
+              >Show all themes</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- enabling live reload in HTML -->
+    <script src="//localhost:35729/livereload.js"></script>
   </body>
 </html>

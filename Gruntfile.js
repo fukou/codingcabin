@@ -3,6 +3,10 @@ module.exports = function (grunt) {
     watch: {
       files: "scss/**/*.scss",
       tasks: ["sass"],
+      options: {
+        // Start a live reload server on the default port 35729
+        livereload: true,
+      },
     },
     sass: {
       dev: {
