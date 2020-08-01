@@ -10,7 +10,7 @@
 ## Installation guide
 ``` bash
 # download the repository
-$ git clone https://github.com/fukou/dashboard-user.git
+$ git clone https://github.com/fukou/codingcabin.git
 
 $ cd codingcabin
 
