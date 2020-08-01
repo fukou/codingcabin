@@ -1,10 +1,21 @@
 // https://github.com/tumblr/docs/blob/master/api.md
 
 const name = "codingcabin";
-const tags = "cabin-themes";
+const tags = "codingawards";
 const apiKey = "EygUfFKmzfMHjUFCtqLwa3K6i8SGLJsiiozHyPEWNFfRrb6O4W";
 
 // https://api.tumblr.com/v2/blog/pitchersandpoets.tumblr.com/posts/photo?tag=new+york+yankees
+// https://api.tumblr.com/v2/blog/codingcabin.tumblr.com/posts/photo?api_key=EygUfFKmzfMHjUFCtqLwa3K6i8SGLJsiiozHyPEWNFfRrb6O4W&tag=codingawards
+const blog =
+  "https://api.tumblr.com/v2/blog/" +
+  name +
+  ".tumblr.com/posts/photo?api_key=" +
+  apiKey +
+  "&tag=" +
+  tags;
+
+console.log(blog);
+
 const url =
   "https://api.tumblr.com/v2/blog/" +
   name +
@@ -41,15 +52,18 @@ fetch(url)
       const article = document.createElement("div");
       article.className = "grid-content";
       article.innerHTML = `
-      <div class="grid-content">
-        <img src="${photo_url}">
+        <img class="grid-content--image" src="${photo_url}" alt="">
         <div class="body__text">
-            <div class="body__text--date">${date}</div>
-            <h2>Created by ${username}</h2>
-            <div class="body__text--note">${note_count} notes</div>
+            <div class="body__text--p">
+               <span>${date}</span>
+               <span>${note_count} notes</span>
+            </div>
+            <h2>
+            <img class="body__text--img" src="https://api.tumblr.com/v2/blog/${username}.tumblr.com/avatar/96" alt="${username}">
+            Created by ${username}
+            </h2>
             <a role="button" tabindex="0" class="btn-read" href="${post_url}">Keep reading</div>
         </div>
-      </div>
       `;
 
       container.appendChild(article);
@@ -64,3 +78,55 @@ fetch(url)
     } // end of response
   })
   .catch((err) => console.log(err));
+
+// const blog__wrapper = document.querySelector(
+//   ".wrapper__blog--inner__slideshow"
+// );
+
+// fetch(blog)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     let read = data.response;
+//     console.log(read);
+
+//     for (let i = 1; i <= 2; i++) {
+//       let posts = read.posts[i];
+//       let {
+//         date,
+//         note_count,
+//         caption,
+//         post_url,
+//         photos: [
+//           {
+//             original_size: { url: photo_url },
+//           },
+//         ],
+//       } = posts;
+
+//       //
+//       const slide = document.createElement("div");
+//       slide.className = "grid-slideshow";
+//       slide.innerHTML = `
+//       <div class="grid-slideshow__inner">
+//         <div class="grid-slideshow__img">
+//           <img src="${photo_url}" alt="" />
+//         </div>
+
+//         <div class="grid-slideshow__desc">
+//           ${caption}
+//         </div>
+//       </div>
+//       `;
+
+//       blog__wrapper.appendChild(slide);
+//       console.log(photo_url);
+
+//       const tumblr_blog = document.querySelectorAll(".tumblr_blog");
+//       for (let j = 0; j < tumblr_blog.length; j++) {
+//         tumblr_blog[j].parentNode.parentNode.removeChild(
+//           tumblr_blog[j].parentNode
+//         );
+//       }
+//     } // end of response
+//   })
+//   .catch((err) => console.log(err));
