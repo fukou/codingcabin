@@ -18,49 +18,58 @@
 
     <nav class="nav">
       <div class="nav__inner">
-        <div class="nav__inner--logo">
+        <div class="nav__inner--logo" aria-label="Coding Cabin Logo">
           <img
             role="presentation"
             src="https://64.media.tumblr.com/avatar_5766c7a243de_128.pnj"
             alt=""
           />
         </div>
-        <ul class="nav__inner--links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/members">Members</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/awards">Coding Awards</a></li>
-          <li class="btn-follow">
-            <a
-              role="button"
-              tabindex="0"
-              href="https://tumblr.com/follow/{name}"
-              >Follow Us</a
-            >
-          </li>
-        </ul>
-
-        <button
-          class="nav__inner--mobile"
-          aria-label="Button for mobile navigation"
+        <nav
+          role="navigation"
+          class="nav__inner--links"
+          aria-label="Primary Navigation"
         >
-          <svg
-            role="presentation"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/members">Members</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/awards">Coding Awards</a></li>
+            <li class="btn-follow">
+              <a
+                role="button"
+                tabindex="0"
+                href="https://tumblr.com/follow/{name}"
+                >Follow Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <nav
+          role="navigation"
+          class="nav__inner--mobile"
+          aria-label="Primary Mobile Navigation"
+        >
+          <button class="nav__inner--mobile" aria-label="Open the menu">
+            <svg
+              role="presentation"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </nav>
       </div>
     </nav>
 
@@ -92,10 +101,11 @@
           <div class="wrapper__featured--inner__head">
             <h1>Featured themes</h1>
             <a class="btn-show" href="/tagged/themes" role="button" tabindex="0"
-              ><div class="sr-only">
+              ><div class="sr-hidden">
                 Show all themes
               </div>
               <svg
+                aria-hidden="true"
                 role="presentation"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -111,18 +121,24 @@
             ></a>
           </div>
           <div class="wrapper__featured--inner__content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            corrupti sit ex suscipit hic. Assumenda asperiores corporis, ad
-            neque in voluptates incidunt rerum distinctio, voluptas repellat,
-            nobis maiores laudantium magnam accusantium ut tenetur. Consectetur
-            molestiae dicta optio quibusdam suscipit dolorum, velit quis ipsa
-            eveniet, possimus beatae saepe minus. Aperiam ab corporis ex
-            delectus? Perspiciatis asperiores laudantium harum excepturi! A
-            culpa sequi voluptate, saepe animi cupiditate? A ipsum placeat
-            dignissimos iste et harum enim voluptatem alias cupiditate
-            laboriosam debitis fugit similique dolorem, odio tempore facilis
-            saepe doloremque voluptatibus minima? Iure rerum possimus recusandae
-            iste repudiandae distinctio fuga atque totam, vero omnis!
+            <div class="grid-content">
+              <img src="https://via.placeholder.com/500x350" alt="" />
+              <div class="body__text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Deleniti nisi natus, omnis consectetur nam aut maxime, ex
+                suscipit dignissimos quis quia, recusandae eveniet officia
+                cupiditate? Facere velit aspernatur sequi ea!
+              </div>
+            </div>
+            <div class="grid-content">
+              <img src="https://via.placeholder.com/500x350" alt="" />
+              <div class="body__text">
+                Neque qui voluptate aperiam numquam ab nisi sequi quasi ratione
+                incidunt non? Sunt impedit quaerat, laudantium ipsa temporibus
+                enim odit rem praesentium sapiente consequatur ipsum rerum modi
+                amet dolorem perferendis?
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -132,16 +148,66 @@
       <div class="footer__inner">
         <div class="footer__inner--grid">
           <h2>Quick Links</h2>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, nemo.
-          Sunt quas, nobis illo corrupti repellat soluta porro quos est amet, id
-          necessitatibus sequi explicabo! Eum molestiae provident enim ratione?
+          <ul aria-label="A group of quick links">
+            <li><a href="/faqs">Frequently Asked Question</a></li>
+            <li><a href="/rss">RSS</a></li>
+            <li><a href="/credits">Credits</a></li>
+            <li><a href="/members">Members</a></li>
+          </ul>
         </div>
         <div class="footer__inner--grid">
           <h2>Affiliates</h2>
-          Ipsam id repellendus voluptatum tempora aspernatur praesentium,
-          placeat esse sit consequuntur nesciunt cupiditate dignissimos
-          accusantium aperiam beatae facilis. Illo ipsam itaque quis esse
-          repudiandae earum ea corporis nesciunt aliquam vitae.
+          <figure
+            role="group"
+            aria-labelledby="affiliates"
+            class="footer__inner--grid__groupimg"
+          >
+            <figcaption id="affiliates" class="sr-only">
+              The lists of affiliates respectively
+            </figcaption>
+
+            <figure role="group" aria-labelledby="fig1">
+              <a
+                href="https://margotofrph.tumblr.com"
+                aria-label="Margot of RPH"
+              >
+                <img
+                  src="https://api.tumblr.com/v2/blog/margotofrph.tumblr.com/avatar/96"
+                  alt=""
+                />
+              </a>
+              <figcaption id="fig1" class="sr-only">
+                Margot of RPH
+              </figcaption>
+            </figure>
+
+            <figure role="group" aria-labelledby="fig2">
+              <a
+                href="https://paletteworld.tumblr.com"
+                aria-label="Pallete World"
+              >
+                <img
+                  src="https://api.tumblr.com/v2/blog/paletteworld.tumblr.com/avatar/96"
+                  alt=""
+              /></a>
+
+              <figcaption id="fig2" class="sr-only">
+                Pallete World
+              </figcaption>
+            </figure>
+
+            <figure role="group" aria-labelledby="fig3">
+              <a href="https://yeahps.tumblr.com" aria-label="Yeah PS">
+                <img
+                  src="https://api.tumblr.com/v2/blog/yeahps.tumblr.com/avatar/96"
+                  alt=""
+                />
+              </a>
+              <figcaption id="fig3" class="sr-only">
+                Yeah PS
+              </figcaption>
+            </figure>
+          </figure>
         </div>
         <div class="footer__inner--grid">
           <h2>About this blog</h2>
