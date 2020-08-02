@@ -1,5 +1,17 @@
 // https://github.com/tumblr/docs/blob/master/api.md
 
+// truncate script
+let truncate = (element, limit, after) => {
+  if (!element || !limit) return;
+
+  let content = element.innerHTML.trim();
+
+  content = content.split(" ").slice(0, limit);
+  content = content.join(" ") + (after ? after : "");
+
+  element.innerHTML = content;
+};
+
 const name = "codingcabin";
 const tags = "codingawards";
 const apiKey = "EygUfFKmzfMHjUFCtqLwa3K6i8SGLJsiiozHyPEWNFfRrb6O4W";
@@ -31,22 +43,22 @@ fetch(url)
     let read = data.response;
     console.log(read);
 
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 0; i <= 1; i++) {
       let posts = read.posts[i];
       let {
         date,
         note_count,
         post_url,
-        photos: [{
-          original_size: {
-            url: photo_url
+        photos: [
+          {
+            original_size: { url: photo_url },
           },
-        }, ],
-        trail: [{
-          blog: {
-            name: username
+        ],
+        trail: [
+          {
+            blog: { name: username },
           },
-        }, ],
+        ],
       } = posts;
 
       const article = document.createElement("div");
@@ -89,18 +101,18 @@ fetch(blog)
     let read = data.response;
     console.log(read);
 
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 0; i <= 3; i++) {
       let posts = read.posts[i];
       let {
         date,
         note_count,
         caption,
         post_url,
-        photos: [{
-          original_size: {
-            url: photo_url
+        photos: [
+          {
+            original_size: { url: photo_url },
           },
-        }, ],
+        ],
       } = posts;
 
       //
@@ -113,6 +125,7 @@ fetch(blog)
         </div>
 
         <div class="grid-slideshow__desc">
+          <span class="date">${date}</span>
           ${caption}
         </div>
       </div>

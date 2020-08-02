@@ -156,6 +156,12 @@ html {
               -webkit-border-radius: 10px;
               -moz-border-radius: 10px;
               border-radius: 10px;
+              transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+              &:hover {
+                background-color: var(--primary-color);
+                color: var(--header-navigation);
+              }
             }
           }
 
@@ -363,6 +369,7 @@ html {
         .grid-slideshow {
           &__img {
             img {
+              border: 2px solid var(--secondary-color);
               object-fit: cover;
               object-position: center;
               width: 100%;
@@ -378,10 +385,25 @@ html {
           }
 
           &__desc {
-            padding: 0 1.85rem;
+            padding: 0rem 1.85rem;
+            max-height: 350px;
+            overflow: hidden;
+            font-size: 0.85em;
+            // background-color: var(--secondary-color);
+
+            .date {
+              display: block;
+              color: var(--article--body);
+              margin-bottom: 1rem;
+            }
+
+            a {
+              color: var(--primary-color);
+            }
 
             @media screen and (max-width: 60rem) {
               padding: 1.5rem 0rem;
+              max-height: auto;
             }
           }
 
@@ -606,7 +628,7 @@ html {
 
   @media screen and (max-width: 60rem) {
     width: 100%;
-    top: 35%;
+    top: 25%;
     transform: translateY(-50%);
   }
 }
