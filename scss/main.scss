@@ -391,6 +391,13 @@ html {
             font-size: 0.85em;
             // background-color: var(--secondary-color);
 
+            h2 {
+              font-family: var(--heading-font);
+              color: var(--tertiary-color);
+              font-weight: normal;
+              font-size: 1.85em;
+            }
+
             .date {
               display: block;
               color: var(--article--body);

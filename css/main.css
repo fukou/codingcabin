@@ -401,6 +401,12 @@ html {
   overflow: hidden;
   font-size: 0.85em;
 }
+.wrapper__blog--inner__slideshow .grid-slideshow__desc h2 {
+  font-family: var(--heading-font);
+  color: var(--tertiary-color);
+  font-weight: normal;
+  font-size: 1.85em;
+}
 .wrapper__blog--inner__slideshow .grid-slideshow__desc .date {
   display: block;
   color: var(--article--body);
