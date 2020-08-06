@@ -291,6 +291,14 @@ html {
 .wrapper {
   margin-top: 5rem;
 
+  &__blog {
+    max-width: 80rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: 3.5rem;
+  }
+
   &__header {
     padding: 8.5rem 3.5rem;
 
