@@ -314,14 +314,23 @@ html {
 }
 
 .wrapper {
-  margin-top: 5rem;
+  margin-top: 6.5rem;
 }
-.wrapper__blog {
-  max-width: 80rem;
+.wrapper__posts {
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 20rem;
+  grid-template-columns: 1fr 30rem;
   gap: 3.5rem;
+  min-height: 100vh;
+  border: 1px solid red;
+}
+@media screen and (max-width: 60rem) {
+  .wrapper__posts {
+    grid-template-columns: 1fr;
+  }
+}
+.wrapper__posts--article {
+  background-color: rgba(211, 226, 242, 0.5);
 }
 .wrapper__header {
   padding: 8.5rem 3.5rem;

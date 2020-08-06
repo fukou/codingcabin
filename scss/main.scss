@@ -289,14 +289,24 @@ html {
 }
 
 .wrapper {
-  margin-top: 5rem;
+  margin-top: 6.5rem;
 
-  &__blog {
-    max-width: 80rem;
+  &__posts {
+    // max-width: 80rem;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 20rem;
+    grid-template-columns: 1fr 30rem;
     gap: 3.5rem;
+    min-height: 100vh;
+    border: 1px solid red;
+
+    @media screen and (max-width: 60rem) {
+      grid-template-columns: 1fr;
+    }
+
+    &--article {
+      background-color: rgba(211, 226, 242, 0.5);
+    }
   }
 
   &__header {
