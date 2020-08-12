@@ -177,7 +177,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2.5rem;
-  max-width: 65rem;
+  max-width: 75rem;
   margin: auto;
 }
 @media screen and (max-width: 60rem) {
@@ -413,7 +413,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 60rem;
+  max-width: 70rem;
   margin: 0 auto;
 }
 @media screen and (max-width: 60rem) {
@@ -423,6 +423,7 @@ html {
 }
 .wrapper__header--inner__desc {
   font-family: var(--body-font);
+  flex: 0 0 50%;
 }
 @media screen and (min-width: 60rem) {
   .wrapper__header--inner__desc {
@@ -508,7 +509,7 @@ html {
 }
 .wrapper__blog--inner__slideshow .grid-slideshow__inner {
   display: grid;
-  grid-template-columns: 30rem 1fr;
+  grid-template-columns: 35rem 1fr;
 }
 @media screen and (max-width: 60rem) {
   .wrapper__blog--inner__slideshow .grid-slideshow__inner {
@@ -525,7 +526,7 @@ html {
   }
 }
 .wrapper__featured--inner, .wrapper__blog--inner {
-  max-width: 60rem;
+  max-width: 70rem;
   margin: 0 auto;
 }
 .wrapper__featured--inner__head, .wrapper__blog--inner__head {
@@ -676,7 +677,7 @@ html {
 }
 
 .tns-controls {
-  width: 50%;
+  width: calc(50% - 2px);
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -714,7 +715,7 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  max-width: 60rem;
+  max-width: 70rem;
   margin: auto;
   padding: 3.5rem 0rem;
 }

@@ -118,7 +118,7 @@ html {
     align-items: center;
     padding: 1rem 2.5rem;
 
-    max-width: 65rem;
+    max-width: 75rem;
     margin: auto;
 
     @media screen and (max-width: 60rem) {
@@ -409,7 +409,7 @@ html {
       justify-content: center;
       align-items: center;
 
-      max-width: 60rem;
+      max-width: 70rem;
       margin: 0 auto;
 
       @media screen and (max-width: 60rem) {
@@ -418,6 +418,7 @@ html {
 
       &__desc {
         font-family: var(--body-font);
+        flex: 0 0 50%;
 
         @media screen and (min-width: 60rem) {
           margin-right: 5rem;
@@ -522,7 +523,7 @@ html {
 
           &__inner {
             display: grid;
-            grid-template-columns: 30rem 1fr;
+            grid-template-columns: 35rem 1fr;
 
             @media screen and (max-width: 60rem) {
               grid-template-columns: 1fr;
@@ -543,7 +544,7 @@ html {
     }
 
     &--inner {
-      max-width: 60rem;
+      max-width: 70rem;
       margin: 0 auto;
 
       &__head {
@@ -713,7 +714,7 @@ html {
 }
 
 .tns-controls {
-  width: 50%;
+  width: calc(50% - 2px);
   position: absolute;
   display: flex;
 
@@ -755,7 +756,7 @@ html {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 
-    max-width: 60rem;
+    max-width: 70rem;
     margin: auto;
     padding: 3.5rem 0rem;
 
