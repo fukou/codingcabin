@@ -88,7 +88,6 @@ select {
 
 body {
   min-height: 100vh;
-  background-color: #eee;
 }
 
 html {
@@ -380,6 +379,7 @@ html {
 .wrapper__posts--article .posts {
   font-family: var(--body-font);
   background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   overflow: hidden;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;

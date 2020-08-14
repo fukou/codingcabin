@@ -24,7 +24,6 @@
 
 body {
   min-height: 100vh;
-  background-color: #eee;
 }
 
 html {
@@ -378,6 +377,7 @@ html {
       .posts {
         font-family: var(--body-font);
         background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
 
         overflow: hidden;
 
