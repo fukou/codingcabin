@@ -26,7 +26,7 @@ const blog =
   "&tag=" +
   tags;
 
-console.log(blog);
+// console.log(blog);
 
 const url =
   "https://api.tumblr.com/v2/blog/" +
@@ -41,7 +41,7 @@ fetch(url)
   .then((res) => res.json())
   .then((data) => {
     let read = data.response;
-    console.log(read);
+    // console.log(read);
 
     for (let i = 0; i <= 1; i++) {
       let posts = read.posts[i];
@@ -79,7 +79,7 @@ fetch(url)
       `;
 
       container.appendChild(article);
-      console.log(photo_url);
+      // console.log(photo_url);
 
       const tumblr_blog = document.querySelectorAll(".tumblr_blog");
       for (let j = 0; j < tumblr_blog.length; j++) {
@@ -99,7 +99,7 @@ fetch(blog)
   .then((res) => res.json())
   .then((data) => {
     let read = data.response;
-    console.log(read);
+    // console.log(read);
 
     for (let i = 0; i <= 3; i++) {
       let posts = read.posts[i];
@@ -132,7 +132,7 @@ fetch(blog)
       `;
 
       blog__wrapper.appendChild(slide);
-      console.log(photo_url);
+      // console.log(photo_url);
 
       const tumblr_blog = document.querySelectorAll(".tumblr_blog");
       for (let j = 0; j < tumblr_blog.length; j++) {
@@ -141,6 +141,14 @@ fetch(blog)
         );
       }
     } // end of response
+
+    // disable the links to be highlighted by keyboard users
+    const linkSlideshow = document.querySelectorAll(".grid-slideshow__desc a");
+    linkSlideshow.forEach(function (item, idx) {
+      item.setAttribute("tabindex", "-1");
+      item.setAttribute("aria-hidden", "true");
+      // console.log(item);
+    });
 
     const slider = tns({
       container: ".wrapper__blog--inner__slideshow",

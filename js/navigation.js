@@ -15,10 +15,3 @@ buttonClose.addEventListener("click", function (e) {
   buttonOpen.setAttribute("aria-expanded", "false");
   e.preventDefault();
 });
-
-// disable the links to be highlighted by keyboard users
-const linkSlideshow = document.querySelectorAll(".grid-slideshow__desc a");
-linkSlideshow.forEach(function (item, idx) {
-  item.setAttribute("tabindex", "-1");
-  item.setAttribute("aria-hidden", "true");
-});
