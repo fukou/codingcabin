@@ -24,6 +24,7 @@
 
 body {
   min-height: 100vh;
+  background-color: #eee;
 }
 
 html {
@@ -276,30 +277,137 @@ html {
 
   &__posts {
     // max-width: 80rem;
-    margin: auto;
+    margin: 10rem auto 5rem auto;
     display: grid;
-    grid-template-columns: 1fr 35rem;
-    // gap: 3.5rem;
+    grid-template-columns: 1fr 28rem;
+    gap: 3.5rem;
     min-height: 100vh;
+    max-width: 80rem;
 
     @media screen and (max-width: 60rem) {
       grid-template-columns: 1fr;
+      padding: 0 1.5rem;
     }
 
     &--sidebar {
-      padding: 4.5rem 3.5rem;
+      .latest__c {
+        font-family: var(--body-font);
+        background: rgb(255, 9, 105);
+        background: linear-gradient(
+          120deg,
+          rgba(255, 9, 105, 1) 0%,
+          rgba(252, 159, 92, 1) 100%
+        );
+        // background-attachment: fixed;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        padding: 1.85rem 1.95rem;
+
+        &--inner {
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          background-color: rgba(255, 255, 255, 0.75);
+          -webkit-border-radius: 9px;
+          -moz-border-radius: 9px;
+          border-radius: 9px;
+          padding: 1.35rem 1.95rem;
+          counter-reset: section;
+
+          li {
+            position: relative;
+            margin-left: 2.5rem;
+            z-index: 2;
+
+            &:hover {
+              &:after {
+                background: rgba(0, 0, 0, 0.08);
+              }
+            }
+
+            &:after {
+              content: "";
+              position: absolute;
+              left: -3.65rem;
+              top: -0.65rem;
+              width: calc(100% + 4.85rem);
+              height: calc(100% + 1.25rem);
+              background: rgba(0, 0, 0, 0);
+              z-index: -1;
+              -webkit-border-radius: 8px;
+              -moz-border-radius: 8px;
+              border-radius: 8px;
+
+              transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+
+            &:before {
+              counter-increment: section;
+              content: counter(section);
+              position: absolute;
+              left: -3.15rem;
+              top: 0.05rem;
+              width: 2.25rem;
+              height: 2.25rem;
+              text-align: center;
+              padding: 0.35rem 0;
+              background-color: #eee;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              border-radius: 50%;
+
+              font-weight: bold;
+            }
+
+            & + li {
+              margin-top: 1.75rem;
+            }
+          }
+        }
+
+        h2 {
+          color: #fff;
+          margin-bottom: 0.85rem;
+          text-transform: uppercase;
+          font-size: 1.25em;
+        }
+      }
     }
 
     &--article {
-      background-color: rgba(211, 226, 242, 0.5);
-
       .posts {
-        padding: 4.5rem 3.5rem;
         font-family: var(--body-font);
+        background-color: #fff;
+
+        overflow: hidden;
+
+        & + .posts {
+          margin-top: 4.5rem;
+        }
+
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+
+        &__answer {
+          display: flex;
+          flex-direction: column;
+          background-color: #fff;
+          padding: 1.85rem 0 0.5rem 0;
+        }
 
         .question__p {
-          padding: 1.5rem 1.85rem;
-          background-color: #e9e9e9;
+          padding: 0 1.85rem;
+          margin-bottom: 1.5rem;
+          width: 65%;
+
+          &--inner {
+            background: #ddd;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+            padding: 1.35rem 1.95rem;
+          }
 
           &--asker {
             display: flex;
@@ -322,34 +430,33 @@ html {
         }
 
         .answerer__p {
-          padding: 1.5rem 1.85rem;
-          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          padding: 0 1.85rem;
+          margin-bottom: 1.5rem;
+          width: 65%;
+          align-self: flex-end;
 
-          &--asker {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 1rem;
-
-            a {
-              color: var(--header-links);
-            }
-
-            img {
-              width: 40px;
-              height: 40px;
-              margin-right: 1rem;
-              -webkit-border-radius: 6px;
-              -moz-border-radius: 6px;
-              border-radius: 6px;
-            }
+          &--inner {
+            background: var(--secondary-color);
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+            padding: 1.35rem 1.95rem;
           }
         }
 
         .answer__p {
-          padding: 1.5rem 1.85rem;
-          background-color: var(--posts-bg);
-          color: var(--posts-text);
+          padding: 0 1.85rem;
+          margin-bottom: 1.5rem;
+          width: 65%;
+          align-self: flex-end;
+
+          &--inner {
+            background: var(--secondary-color);
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+            padding: 1.35rem 1.95rem;
+          }
 
           a {
             color: var(--header-links);
@@ -357,10 +464,12 @@ html {
         }
 
         .body__text {
+          padding: 3rem 3.5rem;
+
           h1 {
             font-family: var(--heading-font);
             font-weight: normal;
-            font-size: 2.5em;
+            font-size: 2em;
           }
 
           p {
@@ -368,11 +477,14 @@ html {
           }
 
           .tmblr-full {
-            margin: 2.5em -3.5rem;
+            margin: 3.5em -1.85rem;
 
             img {
               width: 100%;
               height: auto;
+              -webkit-border-radius: 8px;
+              -moz-border-radius: 8px;
+              border-radius: 8px;
             }
           }
         }
@@ -485,7 +597,7 @@ html {
             padding: 0rem 1.85rem;
             max-height: 350px;
             overflow: hidden;
-            font-size: 0.85em;
+            font-size: 0.95em;
             // background-color: var(--secondary-color);
 
             h2 {
