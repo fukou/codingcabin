@@ -7,23 +7,48 @@
   --heading-font: "DM Serif Display", serif;
   --body-font: "DM Sans", sans-serif;
 
+  --body-bg: #fff;
+
   --primary-color: #ff0969;
   --secondary-color: #d3e2f2;
   --tertiary-color: #0b379b;
 
-  --header-navigation: #fff;
+  --header-navigation: rgba(255, 255, 255, 0.85);
   --header-navigation-link: #111;
 
   --article: #fff;
   --article-heading: #111;
   --article--body: #666;
+  --article--link: var(--primary-color);
 
   --heading-color: #111;
   --body-color: #666;
+  --body-heading-color: #111;
+
+  --border-color: #ccc;
 }
 
 body {
   min-height: 100vh;
+  background-color: var(--body-bg);
+}
+
+body.dark-theme {
+  --hue: 210;
+  --header-navigation: hsl(var(--hue), 20%, 18%);
+  --header-navigation-link: hsl(var(--hue), 10%, 80%);
+
+  --body-bg: hsl(var(--hue), 20%, 15%);
+  --body-color: hsl(var(--hue), 10%, 80%);
+  --body-heading-color: hsl(0, 0%, 90%);
+
+  --secondary-color: hsl(var(--hue), 20%, 18%);
+
+  --article: hsl(var(--hue), 20%, 22%);
+  --article-heading: hsl(var(--hue), 10%, 70%);
+  --article-link: hsl(var(--hue), 90%, 70%);
+
+  --border-color: hsl(var(--hue), 10%, 30%);
 }
 
 html {
@@ -32,7 +57,7 @@ html {
 
 // customize the outline ring for keyboard user
 *:focus {
-  outline: 3px solid hsla(199, 28%, 24%, 0.7);
+  outline: 3px solid var(--border-color);
   outline-offset: 2px;
 }
 
@@ -88,7 +113,6 @@ html {
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.85);
   }
 
   z-index: 999;
@@ -145,6 +169,36 @@ html {
             }
           }
 
+          &.btn-dark {
+            margin-left: 1.65rem;
+
+            a {
+              display: block;
+              padding: 0.5rem 0.85rem;
+              text-decoration: none;
+              color: var(--header-navigation-link);
+              border: 1px solid var(--border-color);
+              -webkit-border-radius: 10px;
+              -moz-border-radius: 10px;
+              border-radius: 10px;
+              transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+              &.dark-actived {
+                background: var(--article);
+              }
+
+              svg {
+                vertical-align: -1.5px;
+              }
+
+              &:hover,
+              &:focus {
+                background-color: var(--primary-color);
+                color: #fff;
+              }
+            }
+          }
+
           &.btn-follow {
             margin-left: 1.65rem;
             a {
@@ -152,7 +206,7 @@ html {
               padding: 0.5rem 1rem;
               text-decoration: none;
               color: var(--header-navigation-link);
-              border: 1px solid rgba(0, 0, 0, 0.25);
+              border: 1px solid var(--border-color);
               -webkit-border-radius: 10px;
               -moz-border-radius: 10px;
               border-radius: 10px;
@@ -161,7 +215,7 @@ html {
               &:hover,
               &:focus {
                 background-color: var(--primary-color);
-                color: var(--header-navigation);
+                color: #fff;
               }
             }
           }
@@ -170,7 +224,7 @@ html {
             margin-left: 0.5rem;
           }
 
-          &:not(.btn-follow) {
+          &:not(.btn-follow):not(.btn-dark) {
             a {
               position: relative;
               display: block;
@@ -264,7 +318,7 @@ html {
                 padding: 0.85rem 1.25rem;
                 text-decoration: none;
                 color: var(--header-navigation-link);
-                border: 1px solid rgba(0, 0, 0, 0.25);
+                border: 1px solid var(--border-color);
                 -webkit-border-radius: 10px;
                 -moz-border-radius: 10px;
                 border-radius: 10px;
@@ -395,8 +449,8 @@ html {
     &--article {
       .posts {
         font-family: var(--body-font);
-        background-color: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.12);
+        background-color: var(--article);
+        border: 1px solid var(--border-color);
 
         overflow: hidden;
 
@@ -516,9 +570,11 @@ html {
 
         .body__text {
           padding: 3rem 3.5rem;
+          color: var(--body-text);
 
           h1 {
             font-family: var(--heading-font);
+            color: var(--body-heading-color);
             font-weight: normal;
             font-size: 2em;
           }
@@ -574,6 +630,7 @@ html {
           font-size: 1.65em;
           font-weight: normal;
           font-family: var(--heading-font);
+          color: var(--body-heading-color);
 
           margin-bottom: 1rem;
         }
@@ -618,7 +675,7 @@ html {
   }
 
   &__featured {
-    background-color: rgba(211, 226, 242, 0.5);
+    background-color: var(--secondary-color);
   }
 
   &__blog {
@@ -649,23 +706,24 @@ html {
             max-height: 370px;
             overflow: hidden;
             font-size: 0.9em;
+            color: var(--body-color);
             // background-color: var(--secondary-color);
 
             h2 {
               font-family: var(--heading-font);
-              color: var(--tertiary-color);
+              color: var(--body-heading-color);
               font-weight: normal;
               font-size: 1.85em;
             }
 
             .date {
               display: block;
-              color: var(--article--body);
+              color: var(--body-color);
               margin-bottom: 1rem;
             }
 
             a {
-              color: var(--primary-color);
+              color: var(--article--link);
             }
 
             @media screen and (max-width: 60rem) {
@@ -710,12 +768,13 @@ html {
         h1 {
           font-family: var(--heading-font);
           font-weight: normal;
+          color: var(--body-heading-color);
         }
 
         .btn-show {
           display: inline-flex;
           background-color: transparent;
-          border: 1px solid rgba(0, 0, 0, 0.2);
+          border: 1px solid var(--border-color);
           color: var(--header-navigation-link);
           text-decoration: none;
           padding: 0.65rem 1rem;
@@ -780,11 +839,11 @@ html {
               align-items: center;
               justify-content: space-between;
               font-size: 0.85em;
-              color: var(--article--body);
+              color: var(--body-color);
 
               span {
                 &:last-child {
-                  color: var(--heading-color);
+                  color: var(--article-heading);
                 }
               }
             }
@@ -803,7 +862,7 @@ html {
               display: inline-block;
               margin-top: 1rem;
               background-color: transparent;
-              border: 1px solid rgba(0, 0, 0, 0.2);
+              border: 1px solid var(--border-color);
               color: var(--header-navigation-link);
               text-decoration: none;
               padding: 0.65rem 1rem;
@@ -816,6 +875,7 @@ html {
               margin: 1rem 0;
               font-family: var(--heading-font);
               font-weight: normal;
+              color: var(--article-heading);
 
               @media screen and (max-width: 48rem) {
                 font-size: 1.25em;
@@ -905,7 +965,7 @@ html {
 // footer
 .footer {
   font-family: var(--body-font);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--border-color);
 
   &__inner {
     display: grid;
@@ -926,6 +986,7 @@ html {
         font-family: var(--heading-font);
         font-weight: normal;
         margin-bottom: 1.5rem;
+        color: var(--body-heading-color);
       }
 
       ul {
@@ -949,7 +1010,7 @@ html {
 
         img {
           height: 60px;
-          border: 5px solid #ccc;
+          border: 5px solid var(--border-color);
           -webkit-border-radius: 100%;
           -moz-border-radius: 100%;
           border-radius: 100%;
@@ -966,7 +1027,7 @@ html {
 
   &__copyright {
     margin-top: 1.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
     text-align: center;
     color: var(--body-color);
 
