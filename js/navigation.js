@@ -17,3 +17,11 @@ buttonClose.addEventListener("click", function (e) {
   document.body.setAttribute("aria-hidden", "false");
   e.preventDefault();
 });
+
+const currentLink = location.pathname;
+const navLink = document.querySelectorAll(".nav__inner--links ul li a");
+navLink.forEach(function (item, idx) {
+  if (item.getAttribute("href") === currentLink) {
+    item.parentElement.classList.add("active");
+  }
+});
