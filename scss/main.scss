@@ -212,7 +212,7 @@ html {
 
               &:hover,
               &:focus {
-                background-color: var(--primary-color);
+                background-color: var(--article-link);
                 color: #fff;
               }
             }
@@ -233,7 +233,7 @@ html {
 
               &:hover,
               &:focus {
-                background-color: var(--primary-color);
+                background-color: var(--article-link);
                 color: #fff;
               }
             }
@@ -265,7 +265,7 @@ html {
                 position: absolute;
                 bottom: 0;
                 left: 16px;
-                background-color: var(--primary-color);
+                background-color: var(--article-link);
                 transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
               }
             }
@@ -666,9 +666,10 @@ html {
         }
 
         .btn-join {
-          background-color: var(--primary-color);
+          background-color: var(--article-link);
+          color: var(--article);
+          font-weight: bold;
           margin-top: 1.5rem;
-          color: white;
           display: inline-block;
           text-decoration: none;
           padding: 0.85rem 1.25rem;
