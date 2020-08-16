@@ -18,8 +18,8 @@
 
   --article: #fff;
   --article-heading: #111;
-  --article--body: #666;
-  --article--link: var(--primary-color);
+  --article-body: #666;
+  --article-link: var(--primary-color);
 
   --heading-color: #111;
   --body-color: #666;
@@ -35,13 +35,14 @@ body {
 
 body.dark-theme {
   --hue: 210;
-  --header-navigation: hsl(var(--hue), 20%, 18%);
+  --header-navigation: rgba(37, 46, 55, 0.85);
   --header-navigation-link: hsl(var(--hue), 10%, 80%);
 
   --body-bg: hsl(var(--hue), 20%, 15%);
   --body-color: hsl(var(--hue), 10%, 80%);
   --body-heading-color: hsl(0, 0%, 90%);
 
+  // --primary-color: #6d2646;
   --secondary-color: hsl(var(--hue), 20%, 18%);
 
   --article: hsl(var(--hue), 20%, 22%);
@@ -49,6 +50,10 @@ body.dark-theme {
   --article-link: hsl(var(--hue), 90%, 70%);
 
   --border-color: hsl(var(--hue), 10%, 30%);
+}
+
+.dark-image {
+  filter: grayscale(50%) opacity(60%);
 }
 
 html {
@@ -125,8 +130,8 @@ html {
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.2);
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
   }
 
   z-index: 999;
@@ -297,7 +302,7 @@ html {
         width: 100%;
         min-height: 100vh;
         height: auto;
-        background-color: var(--header-navigation);
+        background-color: var(--article);
         visibility: hidden;
         opacity: 0;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -479,7 +484,7 @@ html {
         &__answer {
           display: flex;
           flex-direction: column;
-          background-color: #fff;
+          background-color: var(--article);
           padding: 1.85rem 0 0.5rem 0;
         }
 
@@ -504,9 +509,10 @@ html {
             display: flex;
             align-items: center;
             margin-bottom: 1rem;
+            color: var(--body-color);
 
             a {
-              color: var(--header-links);
+              color: var(--article-link);
             }
 
             img {
@@ -554,9 +560,10 @@ html {
             align-items: center;
             margin-top: 1rem;
             justify-content: flex-end;
+            color: var(--body-color);
 
             a {
-              color: var(--header-links);
+              color: var(--article-link);
             }
 
             img {
@@ -575,6 +582,7 @@ html {
             -moz-border-radius: 20px;
             border-radius: 20px;
             padding: 1.35rem 1.95rem;
+            color: var(--body-color);
           }
 
           a {
@@ -584,13 +592,17 @@ html {
 
         .body__text {
           padding: 3rem 3.5rem;
-          color: var(--body-text);
+          color: var(--body-color);
 
           h1 {
             font-family: var(--heading-font);
             color: var(--body-heading-color);
             font-weight: normal;
             font-size: 2em;
+          }
+
+          a {
+            color: var(--article-link);
           }
 
           p {
@@ -737,7 +749,7 @@ html {
             }
 
             a {
-              color: var(--article--link);
+              color: var(--article-link);
             }
 
             @media screen and (max-width: 60rem) {
@@ -1068,8 +1080,8 @@ html {
       padding: 0.45rem 0.95rem;
       font-size: 0.95em;
       text-decoration: none;
-      background-color: var(--primary-color);
-      color: white !important;
+      background-color: var(--article-link);
+      color: var(--article) !important;
       -webkit-border-radius: 16px;
       -moz-border-radius: 16px;
       border-radius: 16px;
