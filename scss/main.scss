@@ -55,6 +55,20 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--body-bg);
+}
+
+::-webkit-scrollbar-track {
+  border: 5px solid var(--body-bg);
+  background-color: var(--body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--body-color);
+}
+
 // customize the outline ring for keyboard user
 *:focus {
   outline: 3px solid var(--border-color);
@@ -941,7 +955,7 @@ html {
 
   & > button {
     background-color: var(--tertiary-color);
-    color: var(--article);
+    color: #fff;
     border: 0;
     padding: 1rem 1rem;
 
