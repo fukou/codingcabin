@@ -1,5 +1,7 @@
 # Coding Cabin
 
+![Homepage](https://static.tumblr.com/5ojoydj/JW7qf5c3l/screenshot_9.png)
+
 > A source code for coding cabin blog
 
 ## Requirements
