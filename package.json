@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "grunt": "^1.2.1"
+    "grunt": "^1.5.2"
   },
   "devDependencies": {
     "grunt-browser-sync": "^2.2.0",
